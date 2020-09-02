@@ -10,8 +10,10 @@ def load_data(messages_filepath, categories_filepath):
   load csv file for both messages and categories
 
   input:
-    messages_filepath   : file path for messages.csv
-    categories_filepath : file path for categories.csv
+    messages_filepath   : file path for disaster_messages.csv
+    categories_filepath : file path for disaster_categories.csv
+  output:
+    df                  : base dataframe  
   '''
 
   # load messages dataset
@@ -25,6 +27,13 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+  '''
+  creates the working dataframe containing categories for the messages
+
+  input                 : base dataframe
+  output                : paroject dataframe
+
+  '''
 
   # create a dataframe of the 36 individual category columns
   categories = df.categories.str.split(';', expand=True)
@@ -51,6 +60,13 @@ def clean_data(df):
   return df
 
 def save_data(df, database_filename):
+  '''
+  saves project dataframe to sqlite
+
+  input:
+    df                  : project dataframe
+    database_filenabe   : path and filename of project database
+  '''
 
   engine = create_engine(f'sqlite:///{database_filename}')
   df.to_sql('DisasterResponse', engine, index=False, if_exists='replace')
