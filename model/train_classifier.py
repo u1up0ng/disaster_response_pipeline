@@ -47,7 +47,7 @@ def load_data(database_filepath):
 
     # create X, y
     X = df['message'].values
-    y = df.iloc[:,5:].values # exclude 'related', I don't know what this is for
+    y = df.iloc[:,5:].values 
 
     # create category names for use in main()
     category_names = df.iloc[:, 5:].columns
