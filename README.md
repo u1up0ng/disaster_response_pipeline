@@ -64,7 +64,9 @@ The archive submission includes the following files and directories:<br>
 - ETL_Pipeline_Preparation.ipynb
 - ML Pipeline Preparation
 5. Icon image file (u1up0ng.png)
-6. This README.md file
+6. Screen capture of the web app. (project_image.png)
+7. This README.md file
+
 
 #### Project Web App Image<a name="image"></a>
 ![screen_capture](project_image.png?raw=true "screen_capture")
