@@ -12,7 +12,8 @@
 4. [Data](#data)
 5. [Install](#install)
 6. [Contents](#contents)
-7. [Related Blogs](#blog)
+7. [Project Web App Image](#image)
+8. [Related Blogs](#blog)
 
 #### Project Motivation<a name="pm"></a>
 This is repository contains project codes required to complete the Data Engineering Section of Udacity's Data Scientist nano degree.
@@ -64,6 +65,9 @@ The archive submission includes the following files and directories:<br>
 - ML Pipeline Preparation
 5. Icon image file (u1up0ng.png)
 6. This README.md file
+
+#### Project Web App Image<a name="image"></a>
+![screen_capture](project_image.png?raw=true "screen_capture")
 
 
 #### Related Blog<a name="blog"></a>
