@@ -14,7 +14,7 @@
 6. [Contents](#contents)
 7. [Instructions](#instructions)
 7. [Project Web App Link and SCreen Capture](#image)
-8. [Related Blogs](#blog)
+8. [Acknowledgements](#ack)
 
 #### Project Motivation<a name="pm"></a>
 This is repository contains project codes required to complete the Data Engineering Section of Udacity's Data Scientist nano degree.
@@ -23,7 +23,9 @@ This is repository contains project codes required to complete the Data Engineer
 The final deliverable of the project is a web app that employs ETL, NLP, and Machine Learning Pipeline lessons taught from the nano degree.<br>
 
 #### Notes<a name="notes"></a>
-C-Support Vector Classification was the model selected for the project due to higher score achieved.
+C-Support Vector Classification was the model selected for the project due to higher score achieved.<br>
+**Note to reviewer:** GridSearchCV parameters were reduced in the submitted code for a faster run of the training classifier .
+Training takes time, thanks for your patience.
 
 #### Data <a name="data"></a>
 Two CSV files holds the data, courtesy of [Figure Eight](https://www.welcome.ai/figure-eight). Files 'disaster_categories.csv' and 'disaster_messages.csv', are pre-formatted data, that needed ETL for it to be loaded to a sqlite database.
@@ -53,7 +55,7 @@ The archive submission includes the following files and directories:<br>
 1. A folder that manages ETL named `data` and houses the following data files:<br>
 - CSV file containing data: `disaster_categories.csv`
 - CSV file containing data: `disaster_messages.csv`
-- New sqlite database that houses the transformed data: `DisasterResponse.db`
+- New SQlite database that houses the transformed data: `DisasterResponse.db`
 - A python file for the ETL: `process_data.py`
 2. A folder that manages the ML models named `models` and houses the following files:<br>
 - A python file that runs the model and outputs a pickle file: `train_classifier.py`
@@ -81,7 +83,7 @@ The archive submission includes the following files and directories:<br>
 This project lives at [Udacity](https://view6914b2f4-3001.udacity-student-workspaces.com)<br>
 ![screen_capture](project_image.png?raw=true "screen_capture")
 
-#### Related Blog<a name="blog"></a>
-to be completed after this submission
+#### Acknowledgements<a name="ack"></a>
+Big thanks to 43piRcubed for help on OneVsRestClassifier
 
 **u1up0ng 2020/09/07**

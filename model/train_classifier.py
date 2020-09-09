@@ -95,13 +95,17 @@ def build_model():
             ('tfidf', TfidfTransformer())
         ])),
         
-        ('clf', MultiOutputClassifier(OneVsRestClassifier(SVC(C=3,
-                                                              kernel='linear', 
+        ('clf', MultiOutputClassifier(OneVsRestClassifier(SVC(kernel='linear', 
                                                               random_state=42))))
     ])
 
-    return pipeline
+    # multiple parameters have been tried during the process,
+    # this is the only one being exposed
+    parameters = {'clf__estimator__estimator__C': [2, 3]}
 
+    cv = GridSearchCV(pipeline, param_grid=parameters, cv = 3)
+
+    return cv
 
 def evaluate_model(model, X_test, y_test, category_names):
     '''
@@ -147,7 +151,7 @@ def main():
         print('Training model...')
         model.fit(X_train, y_train)
         
-        print('Evaluating model...')
+        print('Evaluating model...')    
         evaluate_model(model, X_test, y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))

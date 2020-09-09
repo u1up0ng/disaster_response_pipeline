@@ -41,8 +41,25 @@ def index():
     
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    genre_names = list(genre_counts.index)
+    # genre_counts = df.groupby('genre').count()['message']
+    # genre_names = list(genre_counts.index)
+
+    #visual variables
+    category_count =list(df.drop(df.iloc[:, :5], axis = 1)
+        .sum(axis = 0, skipna = True)
+        .sort_values(ascending=False)
+        .values)
+
+    category_per =list((df.drop(df.iloc[:, :5], axis = 1)
+        .sum(axis = 0, skipna = True)
+        .sort_values(ascending=False)
+        .values)*100/len(df))
+
+    category_names =list(df.drop(df.iloc[:, :5], axis = 1)
+        .sum(axis = 0, skipna = True)
+        .sort_values(ascending=False)
+        .index)
+
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -50,18 +67,36 @@ def index():
         {
             'data': [
                 Bar(
-                    x=genre_names,
-                    y=genre_counts
+                    x=category_names,
+                    y=category_count
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Category Distribution',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
-                    'title': "Genre"
+                    'title': "Categories"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_per
+                )
+            ],
+
+            'layout': {
+                'title': 'Category Distribution by Percentage',
+                'yaxis': {
+                    'title': "Percentage"
+                },
+                'xaxis': {
+                    'title': "Categories"
                 }
             }
         }
